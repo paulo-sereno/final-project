@@ -2,56 +2,56 @@ function HomePage() {
   return (
     <>
       {/* component HeaderNavBar */}
-      <header className="app-header">
-        <div className="user-info">
-          <img className="user-avatar" src="" alt="User profile avatar" />
+      <header className="appHeader">
+        <div className="userInfo">
+          <img className="userAvatar" src="" alt="User profile avatar" />
           <div>
-            <span className="welcome-text">Welcome back</span>
+            <span className="welcomeText">Welcome back</span>
             <span className="username">Aymen Missaoui</span>
           </div>
         </div>
 
-        <button className="menu-btn">...</button>
+        <button className="menuBtn">...</button>
       </header>
 
       <main>
-        <section className="search-bar">
+        <section className="searchBar">
           {/* component SearchBar */}
-          <img className="glass-icon" src="" alt="Magnifying glass icon" />
+          <img className="glassIcon" src="" alt="Magnifying glass icon" />
           <input type="search" placeholder="Search" />
-          <img className="filter-icon" src="" alt="Filter bar icon" />
+          <img className="filterIcon" src="" alt="Filter bar icon" />
         </section>
 
-        <section className="slider-overflow">
+        <section className="sliderOverflow">
           {/* component SliderOverflow */}
-          <div className="slider-card">
+          <div className="sliderCard">
             <div className="upper">
-              <div className="upper-left">
-                <h1 className="content-title">Rima</h1>
-                <span className="content-details">
+              <div className="upperLeft">
+                <h1 className="contentTitle">Rima</h1>
+                <span className="contentDetails">
                   Drama, Horror, Mystery & Thriller
                 </span>
-                <span className="content-details">15, March, 2020</span>
+                <span className="contentDetails">15, March, 2020</span>
               </div>
-              <div className="upper-right">
-                <img className="rating-icon" src="" alt="Rating icon" />
+              <div className="upperRight">
+                <img className="ratingIcon" src="" alt="Rating icon" />
                 <span>4.7</span>
                 {/* rate value */}
               </div>
             </div>
             <div className="bottom">
-              <div className="bottom-left">
+              <div className="bottomLeft">
                 <span>1h 30min, Arabic</span>
               </div>
-              <div className="bottom-right">
-                <button className="video-btn">PLAY ICON</button>
+              <div className="bottomRight">
+                <button className="videoBtn">PLAY ICON</button>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="my-list">
-          <div className="my-list-title">
+        <section className="myList">
+          <div className="myListTitle">
             <h1>My List</h1>
             <img
               className="arrow-icon"
@@ -62,7 +62,7 @@ function HomePage() {
           <div className="card">
             {/* component Card */}
             <img
-              className="cover-img"
+              className="coverImg"
               src=""
               alt="Cover photo from movie/series"
             />
@@ -71,11 +71,11 @@ function HomePage() {
           </div>
         </section>
 
-        <section className="recommended-list">
-          <div className="recommended-title">
+        <section className="recommendedList">
+          <div className="recommendedTitle">
             <h1>Recommended</h1>
             <img
-              className="arrow-icon"
+              className="arrowIcon"
               src=""
               alt="Recommended section selector arrow icon"
             />
@@ -83,7 +83,7 @@ function HomePage() {
           <div className="card">
             {/* component Card */}
             <img
-              className="cover-img"
+              className="coverImg"
               src=""
               alt="Cover photo from movie/series"
             />
