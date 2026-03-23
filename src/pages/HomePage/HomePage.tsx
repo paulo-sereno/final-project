@@ -1,21 +1,16 @@
 import HeaderNavBar from "../../components/HeaderNavBar/HeaderNavBar";
+import SearchBar from "../../components/SearchBar/SearchBar";
 import styles from "./homePage.module.css";
 
 function HomePage() {
   return (
     <>
-      {/* component HeaderNavBar */}
       <header className={styles.appHeader}>
         <HeaderNavBar />
       </header>
 
       <main>
-        <section className="searchBar">
-          {/* component SearchBar */}
-          <img className="glassIcon" src="" alt="Magnifying glass icon" />
-          <input type="search" placeholder="Search" />
-          <img className="filterIcon" src="" alt="Filter bar icon" />
-        </section>
+        <SearchBar />
 
         <section className="sliderOverflow">
           {/* component SliderOverflow */}
