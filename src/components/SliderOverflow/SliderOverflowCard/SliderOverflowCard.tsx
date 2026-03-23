@@ -1,31 +1,71 @@
+import { useEffect, useState } from "react";
+import styles from "./sliderOverflowCard.module.css";
+
 function SliderOverflowCard() {
+  const [popularMovies, setPopularMovies] = useState([]);
+
+  console.log("Popular Movies:", popularMovies);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        "https://api.themoviedb.org/3/movie/popular",
+        {
+          method: "GET",
+          headers: {
+            accept: "application/json",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NzRjM2ZlOWIyZGQ5YmQxNTQzYzhlZWRiYTU0ZTkzMSIsIm5iZiI6MTc0MjE1NzE2My4wMjksInN1YiI6IjY3ZDczNTZiMzE1MzhkZTYwOGYxYmFhMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.g1NFgZQFkQCTa6A5ffKDJXyLcmnKxXKA2xoTRTViHcE",
+          },
+        },
+      );
+
+      const data = await response.json();
+
+      setPopularMovies(data.results);
+
+      console.log("data", data.results);
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <>
-      <div className="sliderCard">
-        <div className="upper">
-          <div className="upperLeft">
-            <h1 className="contentTitle">Rima</h1>
-            <span className="contentDetails">
-              Drama, Horror, Mystery & Thriller
-            </span>
-            <span className="contentDetails">15, March, 2020</span>
-          </div>
-          <div className="upperRight">
-            <img className="ratingIcon" src="" alt="Rating icon" />
-            <span>4.7</span>
-            {/* rate value */}
+    <div>
+      <h1>OLA</h1>
+      {popularMovies?.map((movie) => (
+        <div className={styles.sliderCard} key={movie.id}>
+          <img
+            src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+            alt=""
+          />
+          <div className={styles.movieInfo}>
+            <div className="upper">
+              <div className="upperLeft">
+                <h1 className="contentTitle">{movie.title}</h1>
+                <span className="contentDetails">
+                  {Object.values(movie.genre_ids)}
+                </span>
+                <span className="contentDetails">{movie.release_date}</span>
+              </div>
+              <div className="upperRight">
+                <img className="ratingIcon" src="" alt="Rating icon" />
+                <span>{movie.vote_average}</span>
+                {/* dividir por 2 */}
+              </div>
+            </div>
+            <div className="bottom">
+              <div className="bottomLeft">
+                <span>1h 30min, {movie.original_language}</span>
+              </div>
+              <div className="bottomRight">
+                <button className="videoBtn">PLAY ICON</button>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="bottom">
-          <div className="bottomLeft">
-            <span>1h 30min, Arabic</span>
-          </div>
-          <div className="bottomRight">
-            <button className="videoBtn">PLAY ICON</button>
-          </div>
-        </div>
-      </div>
-    </>
+      ))}
+    </div>
   );
 }
 
