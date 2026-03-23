@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./sliderOverflowCard.module.css";
 import type { IPopularMovies } from "../../../types/PopularMovies";
+import RatingIcon from "../../../icons/RatingIcon";
 
 function SliderOverflowCard() {
   const [popularMovies, setPopularMovies] = useState<IPopularMovies[]>([]);
@@ -49,7 +50,7 @@ function SliderOverflowCard() {
                 <span className="contentDetails">{movie.release_date}</span>
               </div>
               <div className="upperRight">
-                <img className="ratingIcon" src="" alt="Rating icon" />
+                <RatingIcon />
                 <span>{(movie.vote_average / 2).toFixed(1)}</span>
               </div>
             </div>
