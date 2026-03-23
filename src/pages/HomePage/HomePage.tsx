@@ -12,7 +12,9 @@ function HomePage() {
       </header>
 
       <main>
-        <SearchBar />
+        <div className={styles.searchContainer}>
+          <SearchBar />
+        </div>
 
         <SliderOverflow>
           <SliderOverflowCard />

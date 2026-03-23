@@ -6,3 +6,8 @@
   text-align: left;
   font-family: "Inter", sans-serif;
 }
+
+.searchContainer {
+  display: flex;
+  justify-content: center;
+}
