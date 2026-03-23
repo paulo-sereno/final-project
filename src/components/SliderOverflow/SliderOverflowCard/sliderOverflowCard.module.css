@@ -1,0 +1,12 @@
+.sliderCard {
+  position: relative;
+  overflow: hidden;
+  width: 345px;
+  height: 200px;
+}
+
+.movieInfo {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
