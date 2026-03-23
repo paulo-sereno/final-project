@@ -1,6 +1,7 @@
 import HeaderNavBar from "../../components/HeaderNavBar/HeaderNavBar";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import SliderOverflow from "../../components/SliderOverflow/SliderOverflow";
+import SliderOverflowCard from "../../components/SliderOverflow/SliderOverflowCard/SliderOverflowCard";
 import styles from "./homePage.module.css";
 
 function HomePage() {
@@ -14,7 +15,7 @@ function HomePage() {
         <SearchBar />
 
         <SliderOverflow>
-          
+          <SliderOverflowCard />
         </SliderOverflow>
 
         <section className="myList">
