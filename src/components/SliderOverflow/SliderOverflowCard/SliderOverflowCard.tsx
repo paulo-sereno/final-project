@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import styles from "./sliderOverflowCard.module.css";
+import type { IPopularMovies } from "../../../types/PopularMovies";
 
 function SliderOverflowCard() {
-  const [popularMovies, setPopularMovies] = useState([]);
+  const [popularMovies, setPopularMovies] = useState<IPopularMovies[]>([]);
 
   console.log("Popular Movies:", popularMovies);
 
@@ -32,7 +33,6 @@ function SliderOverflowCard() {
 
   return (
     <div>
-      <h1>OLA</h1>
       {popularMovies?.map((movie) => (
         <div className={styles.sliderCard} key={movie.id}>
           <img
@@ -44,14 +44,13 @@ function SliderOverflowCard() {
               <div className="upperLeft">
                 <h1 className="contentTitle">{movie.title}</h1>
                 <span className="contentDetails">
-                  {Object.values(movie.genre_ids)}
+                  {movie.genre_ids.join(", ")}
                 </span>
                 <span className="contentDetails">{movie.release_date}</span>
               </div>
               <div className="upperRight">
                 <img className="ratingIcon" src="" alt="Rating icon" />
-                <span>{movie.vote_average}</span>
-                {/* dividir por 2 */}
+                <span>{(movie.vote_average / 2).toFixed(1)}</span>
               </div>
             </div>
             <div className="bottom">
