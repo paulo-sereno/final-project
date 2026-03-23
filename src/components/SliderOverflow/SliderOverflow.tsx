@@ -5,7 +5,11 @@ interface ISliderOverflow {
 }
 
 function SliderOverflow({ children }: ISliderOverflow) {
-  return <>{children}</>;
+  return (
+    <>
+      <section className="sliderOverflow">{children}</section>
+    </>
+  );
 }
 
 export default SliderOverflow;
