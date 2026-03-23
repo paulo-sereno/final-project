@@ -1,0 +1,24 @@
+.welcomeUser {
+  display: flex;
+}
+
+.userAvatar {
+  height: 40px;
+  width: 40px;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+}
+
+.welcomeText {
+  font-size: 12px;
+  color: #b9c1d9;
+}
+
+.username {
+  font-size: 16px;
+  font-weight: bold;
+}
