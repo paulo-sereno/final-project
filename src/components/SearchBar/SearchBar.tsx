@@ -1,3 +1,4 @@
+import { FilterIcon } from "lucide-react";
 import GlassIcon from "../../icons/GlassIcon";
 
 function SearchBar() {
@@ -5,7 +6,7 @@ function SearchBar() {
     <section className="searchBar">
       <GlassIcon />
       <input type="search" placeholder="Search" />
-      <img className="filterIcon" src="" alt="Filter bar icon" />
+      <FilterIcon />
     </section>
   );
 }
