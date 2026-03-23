@@ -23,19 +23,19 @@ function HomePage() {
         <section className="myList">
           <div className="myListTitle">
             <h1>My List</h1>
-            <img
+            {/* <img
               className="arrow-icon"
               src=""
               alt="My List section selector arrow icon"
-            />
+            /> */}
           </div>
           <div className="card">
             {/* component Card */}
-            <img
+            {/* <img
               className="coverImg"
               src=""
               alt="Cover photo from movie/series"
-            />
+            /> */}
             <span>Movie/Series Title</span>
             <span>Five Stars Rating</span>
           </div>
@@ -44,19 +44,19 @@ function HomePage() {
         <section className="recommendedList">
           <div className="recommendedTitle">
             <h1>Recommended</h1>
-            <img
+            {/* <img
               className="arrowIcon"
               src=""
               alt="Recommended section selector arrow icon"
-            />
+            /> */}
           </div>
           <div className="card">
             {/* component Card */}
-            <img
+            {/* <img
               className="coverImg"
               src=""
               alt="Cover photo from movie/series"
-            />
+            /> */}
             <span>Movie/Series Title</span>
             <span>Five Stars Rating</span>
           </div>
