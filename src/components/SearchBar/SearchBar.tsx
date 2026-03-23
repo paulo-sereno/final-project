@@ -1,4 +1,4 @@
-import { FilterIcon } from "lucide-react";
+import FilterIcon from "../../icons/FilterIcon";
 import GlassIcon from "../../icons/GlassIcon";
 
 function SearchBar() {
