@@ -1,4 +1,5 @@
-import type { ReactNode } from "react";
+import type { ReactNode } from "react"
+import styles from "./slideroverflow.module.css"
 
 interface ISliderOverflow {
   children: ReactNode;
@@ -7,7 +8,7 @@ interface ISliderOverflow {
 function SliderOverflow({ children }: ISliderOverflow) {
   return (
     <>
-      <section className="sliderOverflow">{children}</section>
+      <section className={styles.sliderOverflow}>{children}</section>
     </>
   );
 }
