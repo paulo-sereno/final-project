@@ -1,14 +1,16 @@
-import type { ReactNode } from "react"
-import styles from "./slideroverflow.module.css"
+import usePopularMovies from "../../hooks/usePopularMovies";
+import styles from "./slideroverflow.module.css";
+import SliderOverflowCard from "./SliderOverflowCard/SliderOverflowCard";
 
-interface ISliderOverflow {
-  children: ReactNode;
-}
-
-function SliderOverflow({ children }: ISliderOverflow) {
+function SliderOverflow() {
+  const { popularMovies } = usePopularMovies();
   return (
     <>
-      <section className={styles.sliderOverflow}>{children}</section>
+      <section className={styles.sliderOverflow}>
+        {popularMovies.map((movie) => (
+          <SliderOverflowCard key={movie.id} movie={movie} />
+        ))}
+      </section>
     </>
   );
 }
