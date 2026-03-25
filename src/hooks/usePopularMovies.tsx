@@ -34,3 +34,5 @@ function usePopularMovies() {
 }
 
 export default usePopularMovies;
+
+// e se eu aceitar category e considerar o /category para ainda ser mais dinâmico?
