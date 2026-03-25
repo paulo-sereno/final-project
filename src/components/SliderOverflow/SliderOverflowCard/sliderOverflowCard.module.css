@@ -3,10 +3,70 @@
   overflow: hidden;
   width: 345px;
   height: 200px;
+  border-radius: 16px;
+  flex-shrink: 0; /* impede que os cards encolham */
+  scroll-snap-align: start;
 }
 
 .movieInfo {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 16px 8px;
+  box-sizing: border-box; /* para que o padding fique dentro dos 100% */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.upper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.upperLeft {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 4px;
+  font-family: "Inter", sans-serif;
+}
+
+.contentTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.contentDetails {
+  font-size: 12px;
+}
+
+.upperRight {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.bottomLeft {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+}
+
+.bottomRight {
+  height: 35px;
 }
