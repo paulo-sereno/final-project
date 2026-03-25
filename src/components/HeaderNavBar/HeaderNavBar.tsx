@@ -1,4 +1,4 @@
-import { MenuIcon } from "lucide-react";
+import MenuIcon from "../../icons/MenuIcon";
 import styles from "./headernavbar.module.css";
 
 function HeaderNavBar() {
