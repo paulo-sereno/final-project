@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./sliderOverflowCard.module.css";
 import type { IPopularMovies } from "../../../types/PopularMovies";
 import RatingIcon from "../../../icons/RatingIcon";
+import PlayIcon from "../../../icons/PlayIcon";
 
 function SliderOverflowCard() {
   const [popularMovies, setPopularMovies] = useState<IPopularMovies[]>([]);
@@ -41,25 +42,31 @@ function SliderOverflowCard() {
             alt=""
           />
           <div className={styles.movieInfo}>
-            <div className="upper">
-              <div className="upperLeft">
-                <h1 className="contentTitle">{movie.title}</h1>
-                <span className="contentDetails">
+            <div className={styles.upper}>
+              <div className={styles.upperLeft}>
+                <h1 className={styles.contentTitle}>{movie.title}</h1>
+                <span className={styles.contentDetails}>
                   {movie.genre_ids.join(", ")}
                 </span>
-                <span className="contentDetails">{movie.release_date}</span>
+                <span className={styles.contentDetails}>
+                  {movie.release_date}
+                </span>
               </div>
-              <div className="upperRight">
-                <RatingIcon />
-                <span>{(movie.vote_average / 2).toFixed(1)}</span>
+              <div className={styles.upperRight}>
+                <div className="ratingIconContainer">
+                  <RatingIcon />
+                </div>
+                <div className="voteAverageContainer">
+                  <span>{(movie.vote_average / 2).toFixed(1)}</span>
+                </div>
               </div>
             </div>
-            <div className="bottom">
-              <div className="bottomLeft">
+            <div className={styles.bottom}>
+              <div className={styles.bottomLeft}>
                 <span>1h 30min, {movie.original_language}</span>
               </div>
-              <div className="bottomRight">
-                <button className="videoBtn">PLAY ICON</button>
+              <div className={styles.bottomRight}>
+                <PlayIcon />
               </div>
             </div>
           </div>
