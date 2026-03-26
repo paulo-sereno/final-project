@@ -24,7 +24,7 @@ function SliderOverflowCard({ movie }: { movie: IPopularMovie }) {
             </div>
             <div className={styles.upperRight}>
               <div className="ratingIconContainer">
-                <RatingIcon />
+                <RatingIcon type={"full"} />
               </div>
               <div className="voteAverageContainer">
                 <span>{(movie.vote_average / 2).toFixed(1)}</span>
