@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
-import type { IPopularMovies } from "../types/PopularMovies";
 
-function usePopularMovies() {
-  const [popularMovies, setPopularMovies] = useState<IPopularMovies[]>([]);
+interface ICategory {
+  category: "movie" | "tv";
+}
 
-  console.log("Popular Movies:", popularMovies);
+function usePopularCategory<T>({ category }: ICategory) {
+  const [popularCategory, setPopularCategory] = useState<T[]>([]);
+
+  console.log("Popular List:", popularCategory);
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        "https://api.themoviedb.org/3/movie/popular",
+        `https://api.themoviedb.org/3/${category}/popular`,
         {
           method: "GET",
           headers: {
@@ -22,17 +25,15 @@ function usePopularMovies() {
 
       const data = await response.json();
 
-      setPopularMovies(data.results);
+      setPopularCategory(data.results);
 
       console.log("data", data.results);
     };
 
     fetchData();
-  }, []);
+  }, [category]);
 
-  return { popularMovies };
+  return { popularCategory };
 }
 
-export default usePopularMovies;
-
-// e se eu aceitar category e considerar o /category para ainda ser mais dinâmico?
+export default usePopularCategory;
