@@ -6,3 +6,16 @@
   padding: 16px;
   scroll-snap-type: x mandatory; /* scroll suave por card */
 }
+
+.sliderOverflow::-webkit-scrollbar {
+  height: 4px;
+}
+
+.sliderOverflow::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sliderOverflow::-webkit-scrollbar-thumb {
+  background-color: #ffffff33;
+  border-radius: 999px;
+}
