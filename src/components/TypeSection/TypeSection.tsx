@@ -1,41 +1,10 @@
-import usePopularCategory from "../../hooks/usePopularCategories";
-import type { IPopularMovie, IPopularTV } from "../../types/PopularCategory";
-import styles from "./typeSection.module.css";
-import TypeSectionCard from "./TypeSectionCard/TypeSectionCard";
-import TypeSectionHeader from "./TypeSectionHeader/TypeSectionHeader";
+import TypeSectionContent from "./TypeSectionContent/TypeSectionContent";
 
 function TypeSection() {
-  const { popularCategory: popularMovies } = usePopularCategory<IPopularMovie>({
-    category: "movie",
-  });
-
-  const { popularCategory: popularTV } = usePopularCategory<IPopularTV>({
-    category: "tv",
-  });
-
   return (
     <>
-      <section className={styles.typeSection}>
-        <div className={styles.sectionTitleContainer}>
-          <TypeSectionHeader title={"Movies"} />
-        </div>
-        <div className={styles.sectionCardsContainer}>
-          {popularMovies.map((item) => (
-            <TypeSectionCard key={item.id} item={item} />
-          ))}
-        </div>
-      </section>
-
-      <section className={styles.typeSection}>
-        <div className={styles.sectionTitleContainer}>
-          <TypeSectionHeader title={"TV Series"} />
-        </div>
-        <div className={styles.sectionCardsContainer}>
-          {popularTV.map((item) => (
-            <TypeSectionCard key={item.id} item={item} />
-          ))}
-        </div>
-      </section>
+      <TypeSectionContent type={"movie"} category="popular" title={"Movies"} />
+      <TypeSectionContent type={"tv"} category="popular" title={"TV Series"} />
     </>
   );
 }

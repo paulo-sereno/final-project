@@ -1,10 +1,10 @@
-import type { IPopularCategory } from "../../../types/PopularCategory";
-import isMovie from "../../../types/PopularCategory";
+import type { MediaItem } from "../../../types/MediaItem";
+import isMovie from "../../../types/MediaItem";
 import StarRating from "../../StarRating/StarRating";
 import styles from "./typeSectionCard.module.css";
 
 interface ITypeSectionCard {
-  item: IPopularCategory;
+  item: MediaItem;
 }
 
 function TypeSectionCard({ item }: ITypeSectionCard) {
