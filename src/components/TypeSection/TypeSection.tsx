@@ -1,4 +1,4 @@
-import usePopularCategory from "../../hooks/usePopularMovies";
+import usePopularCategory from "../../hooks/usePopularCategories";
 import type { IPopularMovie, IPopularTV } from "../../types/PopularCategory";
 import styles from "./typeSection.module.css";
 import TypeSectionCard from "./TypeSectionCard/TypeSectionCard";

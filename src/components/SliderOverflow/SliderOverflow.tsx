@@ -1,4 +1,4 @@
-import usePopularCategory from "../../hooks/usePopularMovies";
+import usePopularCategory from "../../hooks/usePopularCategories";
 import type { IPopularMovie } from "../../types/PopularCategory";
 import styles from "./slideroverflow.module.css";
 import SliderOverflowCard from "./SliderOverflowCard/SliderOverflowCard";
