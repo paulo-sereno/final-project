@@ -1,5 +1,5 @@
 import styles from "./sliderOverflowCard.module.css";
-import type { IPopularCategory } from "../../../types/PopularCategory";
+import type { IPopularMovie } from "../../../types/PopularCategory";
 import RatingIcon from "../../../icons/RatingIcon";
 import PlayIcon from "../../../icons/PlayIcon";
 
