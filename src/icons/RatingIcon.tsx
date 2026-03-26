@@ -14,7 +14,7 @@ const commonSvgProps: React.SVGProps<SVGSVGElement> = {
   height: 24,
   viewBox: "0 0 24 24",
   fill: "#FFFF00",
-  stroke: "black",
+  stroke: "#ffff0031",
   strokeWidth: 2,
   strokeLinecap: "round" as const,
   strokeLinejoin: "round" as const,
