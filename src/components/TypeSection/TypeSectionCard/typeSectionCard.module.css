@@ -1,6 +1,17 @@
 .cardContainer {
   display: flex;
   flex-direction: column;
+  width: 150px;
+  height: 275px;
   padding: 16px 8px;
-  gap: 8px;
+  gap: 4px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cardImage {
+  width: 150px;
+  height: 217px;
+  border-radius: 8px;
 }
