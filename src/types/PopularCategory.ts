@@ -26,3 +26,12 @@ export interface IPopularTV extends IPopularBase {
 }
 
 export type IPopularCategory = IPopularMovie | IPopularTV;
+
+// type guards
+export default function isMovie(item: IPopularCategory): item is IPopularMovie {
+  return "title" in item;
+}
+
+// export function isTV(item: IPopularCategory): item is IPopularTV {
+//   return "name" in item;
+// }
