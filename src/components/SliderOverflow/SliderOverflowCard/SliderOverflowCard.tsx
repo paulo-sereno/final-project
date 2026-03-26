@@ -1,9 +1,9 @@
 import styles from "./sliderOverflowCard.module.css";
-import type { IPopularMovies } from "../../../types/PopularMovies";
+import type { IPopularCategory } from "../../../types/PopularCategory";
 import RatingIcon from "../../../icons/RatingIcon";
 import PlayIcon from "../../../icons/PlayIcon";
 
-function SliderOverflowCard({ movie }: { movie: IPopularMovies }) {
+function SliderOverflowCard({ movie }: { movie: IPopularMovie }) {
   return (
     <div>
       <div className={styles.sliderCard} key={movie.id}>
