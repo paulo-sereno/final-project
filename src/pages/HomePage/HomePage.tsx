@@ -19,27 +19,6 @@ function HomePage() {
         <SliderOverflow />
 
         <TypeSection />
-
-        <section className="recommendedList">
-          <div className="recommendedTitle">
-            <h1>Recommended</h1>
-            {/* <img
-              className="arrowIcon"
-              src=""
-              alt="Recommended section selector arrow icon"
-            /> */}
-          </div>
-          <div className="card">
-            {/* component Card */}
-            {/* <img
-              className="coverImg"
-              src=""
-              alt="Cover photo from movie/series"
-            /> */}
-            <span>Movie/Series Title</span>
-            <span>Five Stars Rating</span>
-          </div>
-        </section>
       </main>
     </>
   );
