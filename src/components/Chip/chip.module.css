@@ -1,0 +1,33 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 35px;
+
+  border-radius: 10px;
+  border: 1px solid purple;
+  margin: 4px;
+
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.primary {
+  width: 95px;
+  background-color: #515053;
+  border-color: #312f35;
+}
+
+.secondary {
+  background-color: #312f35;
+  border-color: #515053;
+}
+
+.terciary {
+  background-color: #f5c518;
+  color: #131316;
+  width: 100%;
+  margin: 0;
+}
