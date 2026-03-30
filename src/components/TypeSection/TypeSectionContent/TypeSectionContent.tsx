@@ -8,9 +8,10 @@ interface ISectionContent {
   type: "movie" | "tv";
   category: string;
   title: string;
+  path: string;
 }
 
-function TypeSectionContent({ type, category, title }: ISectionContent) {
+function TypeSectionContent({ type, category, title, path }: ISectionContent) {
   const { results } = useFetchMedia<MediaItem>({
     type: type,
     category: category,
@@ -19,7 +20,7 @@ function TypeSectionContent({ type, category, title }: ISectionContent) {
   return (
     <section className={styles.typeSection}>
       <div className={styles.sectionTitleContainer}>
-        <TypeSectionHeader title={title} />
+        <TypeSectionHeader title={title} path={path} />
       </div>
       <div className={styles.sectionCardsContainer}>
         {results.map((item) => (

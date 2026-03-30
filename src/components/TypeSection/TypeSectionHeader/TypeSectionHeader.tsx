@@ -1,12 +1,17 @@
 import ArrowIcon from "../../../icons/ArrowIcon";
 import styles from "./typeSectionHeader.module.css";
+import { Link } from "react-router-dom";
 
-function TypeSectionHeader({ title }: { title: string }) {
+function TypeSectionHeader({ title, path }: { title: string, path: string }) {
   return (
-    <div className={styles.sectionTitle}>
-      <span className={styles.headerName}>{title}</span>
-      <ArrowIcon />
-    </div>
+    <>
+      <Link to={path}>
+        <div className={styles.sectionTitle}>
+          <span className={styles.headerName}>{title}</span>
+          <ArrowIcon />
+        </div>
+      </Link>
+    </>
   );
 }
 
