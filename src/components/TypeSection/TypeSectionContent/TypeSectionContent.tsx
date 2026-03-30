@@ -8,10 +8,17 @@ interface ISectionContent {
   type: "movie" | "tv";
   category: string;
   title: string;
-  path: string;
+  path?: string;
+  variant: "small" | "big";
 }
 
-function TypeSectionContent({ type, category, title, path }: ISectionContent) {
+function TypeSectionContent({
+  type,
+  category,
+  title,
+  path,
+  variant,
+}: ISectionContent) {
   const { results } = useFetchMedia<MediaItem>({
     type: type,
     category: category,
@@ -20,11 +27,11 @@ function TypeSectionContent({ type, category, title, path }: ISectionContent) {
   return (
     <section className={styles.typeSection}>
       <div className={styles.sectionTitleContainer}>
-        <TypeSectionHeader title={title} path={path} />
+        <TypeSectionHeader title={title} path={path} variant={variant} />
       </div>
       <div className={styles.sectionCardsContainer}>
         {results.map((item) => (
-          <TypeSectionCard key={item.id} item={item} />
+          <TypeSectionCard key={item.id} item={item} variant={variant} />
         ))}
       </div>
     </section>

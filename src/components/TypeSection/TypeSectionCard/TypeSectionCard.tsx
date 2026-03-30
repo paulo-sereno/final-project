@@ -5,13 +5,14 @@ import styles from "./typeSectionCard.module.css";
 
 interface ITypeSectionCard {
   item: MediaItem;
+  variant: "small" | "big";
 }
 
-function TypeSectionCard({ item }: ITypeSectionCard) {
+function TypeSectionCard({ item, variant }: ITypeSectionCard) {
   const title = isMovie(item) ? item.title : item.name;
 
   return (
-    <div className={styles.cardContainer}>
+    <div className={`${styles.cardContainer} ${styles[variant]}`}>
       <img
         className={styles.cardImage}
         src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}

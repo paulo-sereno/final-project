@@ -7,15 +7,14 @@ function TypeSection() {
         type="movie"
         category="popular"
         title="Movies"
-        path="/movies"
+        path="/movies" variant={"small"}        
       />
 
       <TypeSectionContent
         type="tv"
         category="popular"
         title="TV Series"
-        path="/tvseries"
-      />
+        path="/tvseries" variant={"small"}      />
     </>
   );
 }
