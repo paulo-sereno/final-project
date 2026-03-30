@@ -1,3 +1,12 @@
+.appHeader {
+  border: 16px solid transparent;
+  padding: 16px 8px;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  font-family: "Inter", sans-serif;
+}
+
 .welcomeUser {
   display: flex;
 }

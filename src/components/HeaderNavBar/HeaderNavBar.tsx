@@ -3,7 +3,7 @@ import styles from "./headernavbar.module.css";
 
 function HeaderNavBar() {
   return (
-    <>
+    <header className={styles.appHeader}>
       <div className={styles.welcomeUser}>
         <div>
           <img
@@ -20,7 +20,7 @@ function HeaderNavBar() {
       <div className="menuIcon">
         <MenuIcon />
       </div>
-    </>
+    </header>
   );
 }
 

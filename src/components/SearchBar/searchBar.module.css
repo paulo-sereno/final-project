@@ -1,3 +1,9 @@
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  padding: 16px 8px;
+}
+
 .searchBarContainer {
   border: 1px solid #131316;
   border-radius: 16px;
