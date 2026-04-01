@@ -11,7 +11,7 @@ function HomePage() {
       <main>
         <SearchBar />
 
-        <SliderOverflow />
+        <SliderOverflow type={"movie"} />
 
         <TypeSection />
       </main>

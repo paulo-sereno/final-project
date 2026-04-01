@@ -13,7 +13,7 @@ function MoviesPage() {
 
       <main>
         <SearchBar />
-        <SliderOverflow />
+        <SliderOverflow type={"movie"} />
         <GenresBar type={"movie"} />
         <TypeSectionContent
           type={"movie"}
