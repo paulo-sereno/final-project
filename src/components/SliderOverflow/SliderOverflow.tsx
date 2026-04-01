@@ -1,18 +1,22 @@
 import useFetchMedia from "../../hooks/useFetchMedia";
-import type { IMovie } from "../../types/MediaItem";
+import type { MediaItem } from "../../types/MediaItem";
 import styles from "./slideroverflow.module.css";
 import SliderOverflowCard from "./SliderOverflowCard/SliderOverflowCard";
 
-function SliderOverflow() {
-  const { results } = useFetchMedia<IMovie>({
+interface ISliderOverflow {
+  type: "movie" | "tv";
+}
+
+function SliderOverflow({ type }: ISliderOverflow) {
+  const { results } = useFetchMedia<MediaItem>({
     category: "popular",
-    type: "movie",
+    type: type,
   });
   return (
     <>
       <section className={styles.sliderOverflow}>
-        {results.map((movie) => (
-          <SliderOverflowCard key={movie.id} movie={movie} />
+        {results.map((item) => (
+          <SliderOverflowCard key={item.id} item={item} />
         ))}
       </section>
     </>

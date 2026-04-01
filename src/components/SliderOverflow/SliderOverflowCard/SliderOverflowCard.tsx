@@ -1,39 +1,52 @@
 import styles from "./sliderOverflowCard.module.css";
-import type { IMovie } from "../../../types/MediaItem";
+import type { MediaItem } from "../../../types/MediaItem";
+import isMovie from "../../../types/MediaItem";
 import RatingIcon from "../../../icons/RatingIcon";
 import PlayIcon from "../../../icons/PlayIcon";
+import useFetchGenres from "../../../hooks/useFetchGenres";
+import { useNavigate } from "react-router-dom";
 
-function SliderOverflowCard({ movie }: { movie: IMovie }) {
+interface ISliderOverflowCard {
+  item: MediaItem;
+}
+
+function SliderOverflowCard({ item }: ISliderOverflowCard) {
+  const title = isMovie(item) ? item.title : item.name;
+  const date = isMovie(item) ? item.release_date : item.first_air_date;
+
+  const { genres } = useFetchGenres(isMovie(item) ? "movie" : "tv");
+
+  const navigate = useNavigate();
+
   return (
     <div>
-      <div className={styles.sliderCard} key={movie.id}>
+      <div
+        className={styles.sliderCard}
+        onClick={() => navigate(`/details/movie/${item.id}`)}
+      >
         <img
-          src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-          alt=""
+          src={`https://image.tmdb.org/t/p/w500${item.backdrop_path}`}
+          alt={title}
         />
         <div className={styles.movieInfo}>
           <div className={styles.upper}>
             <div className={styles.upperLeft}>
-              <h1 className={styles.contentTitle}>{movie.title}</h1>
+              <h1 className={styles.contentTitle}>{title}</h1>
               <span className={styles.contentDetails}>
-                {movie.genre_ids.join(", ")}
+                {item.genre_ids
+                  .map((id) => genres.find((item) => item.id === id)?.name)
+                  .join(", ")}
               </span>
-              <span className={styles.contentDetails}>
-                {movie.release_date}
-              </span>
+              <span className={styles.contentDetails}>{date}</span>
             </div>
             <div className={styles.upperRight}>
-              <div className="ratingIconContainer">
-                <RatingIcon type={"full"} />
-              </div>
-              <div className="voteAverageContainer">
-                <span>{(movie.vote_average / 2).toFixed(1)}</span>
-              </div>
+              <RatingIcon type="full" />
+              <span>{(item.vote_average / 2).toFixed(1)}</span>
             </div>
           </div>
           <div className={styles.bottom}>
             <div className={styles.bottomLeft}>
-              <span>1h 30min, {movie.original_language}</span>
+              <span>1h 30min, {item.original_language}</span>
             </div>
             <div className={styles.bottomRight}>
               <PlayIcon />
