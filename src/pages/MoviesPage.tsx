@@ -1,26 +1,20 @@
-import Chip from "../components/Chip/Chip";
+import GenresBar from "../components/GenresBar/GenresBar";
 import HeaderNavBar from "../components/HeaderNavBar/HeaderNavBar";
 import SearchBar from "../components/SearchBar/SearchBar";
 import SliderOverflow from "../components/SliderOverflow/SliderOverflow";
 import TypeSectionContent from "../components/TypeSection/TypeSectionContent/TypeSectionContent";
+import useFetchGenres from "../hooks/useFetchGenres";
 
 function MoviesPage() {
+  useFetchGenres("movie");
   return (
     <>
       <HeaderNavBar />
 
       <main>
         <SearchBar />
-
         <SliderOverflow />
-
-        <Chip label={"PRIMARY"} variant={"primary"} />
-        <Chip label={"SECONDARY"} variant={"secondary"} />
-
-        <div style={{ padding: "8px" }}>
-          <Chip label={"TERCIARY"} variant={"terciary"} />
-        </div>
-
+        <GenresBar type={"movie"} />
         <TypeSectionContent
           type={"movie"}
           category={"popular"}

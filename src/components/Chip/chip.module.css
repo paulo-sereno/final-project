@@ -8,14 +8,18 @@
   border-radius: 10px;
   border: 1px solid purple;
   margin: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
 
   font-family: Inter;
   font-weight: 600;
   font-size: 16px;
+
+  box-sizing: border-box;
 }
 
 .primary {
-  width: 95px;
+  min-width: 95px;
   background-color: #515053;
   border-color: #312f35;
 }
