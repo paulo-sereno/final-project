@@ -1,5 +1,6 @@
 import Chip from "../Chip/Chip";
 import type { IDetails } from "../../types/Details";
+import LikeIcon from "../../icons/LikeIcon";
 
 interface IChipsBar {
   details: IDetails | undefined;
@@ -21,7 +22,9 @@ function ChipsBar({ details }: IChipsBar) {
           />
         )}
       </div>
-      <div className="likeContainer">LIKE ICON</div>
+      <div className="likeContainer">
+        <LikeIcon />
+      </div>
     </section>
   );
 }
