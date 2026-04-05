@@ -1,0 +1,51 @@
+.castSection {
+  padding: 16px;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+.castList {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 12px;
+}
+
+.castList::-webkit-scrollbar {
+  height: 4px;
+}
+
+.castList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.castList::-webkit-scrollbar-thumb {
+  background-color: #ffffff33;
+  border-radius: 999px;
+}
+
+
+.actorCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.actorImage {
+  width: 108px;
+  height: 108px;
+  object-fit: cover;
+}
+
+.actorName {
+  font-size: 12px;
+    font-weight: 600;
+  text-align: center;
+  max-width: 100px;
+}
