@@ -71,3 +71,29 @@
 .bottomRight {
   height: 35px;
 }
+
+@media (max-width: 768px) {
+  .sliderCard {
+    width: 280px;
+    height: 160px;
+  }
+
+  .contentTitle {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 430px) {
+  .sliderCard {
+    width: 220px;
+    height: 130px;
+  }
+
+  .contentTitle {
+    font-size: 14px;
+  }
+
+  .contentDetails {
+    font-size: 10px;
+  }
+}
