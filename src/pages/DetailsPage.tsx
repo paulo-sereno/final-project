@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 import Chip from "../components/Chip/Chip";
 import useFetchDetails from "../hooks/useFetchDetails";
-import TrailerSection from "../components/TrailerSection/TrailerSection";
 import ChipsBar from "../components/ChipsBar/ChipsBar";
 import CastSection from "../components/CastSection/CastSection";
 import ItemDetails from "../components/ItemDetails/ItemDetails";
+import TrailerSection from "../components/TrailerSection/TrailerSection";
 
 function DetailsPage() {
   const { id, type } = useParams<{ id: string; type: "movie" | "tv" }>();
@@ -26,11 +26,8 @@ function DetailsPage() {
     <>
       <TrailerSection details={details} trailer={trailer} />
       <ChipsBar details={details} />
-      <section className="itemDetails">
-        <ItemDetails details={details} />
-        <CastSection cast={cast} />
-      </section>
-
+      <ItemDetails details={details} />
+      <CastSection cast={cast} />
       <Chip label={"Open IMDb"} variant={"terciary"} />
     </>
   );
