@@ -1,6 +1,7 @@
 import Chip from "../Chip/Chip";
 import type { IDetails } from "../../types/Details";
 import LikeIcon from "../../icons/LikeIcon";
+import styles from "./chipsBar.module.css";
 
 interface IChipsBar {
   details: IDetails | undefined;
@@ -8,8 +9,8 @@ interface IChipsBar {
 
 function ChipsBar({ details }: IChipsBar) {
   return (
-    <section className="chipsBar">
-      <div className="chipsContainer">
+    <section className={styles.chipsBar}>
+      <div className={styles.chipsContainer}>
         <Chip label="AGE" variant="secondary" />
         {details?.genres.map((genre) => (
           <Chip key={genre.id} label={genre.name} variant="secondary" />
@@ -22,7 +23,7 @@ function ChipsBar({ details }: IChipsBar) {
           />
         )}
       </div>
-      <div className="likeContainer">
+      <div className={styles.likeContainer}>
         <LikeIcon />
       </div>
     </section>
