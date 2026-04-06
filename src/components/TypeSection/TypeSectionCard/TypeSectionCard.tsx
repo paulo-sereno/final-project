@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import type { MediaItem } from "../../../types/MediaItem";
 import isMovie from "../../../types/MediaItem";
 import StarRating from "../../StarRating/StarRating";
@@ -11,8 +12,13 @@ interface ITypeSectionCard {
 function TypeSectionCard({ item, variant }: ITypeSectionCard) {
   const title = isMovie(item) ? item.title : item.name;
 
+  const navigate = useNavigate();
+
   return (
-    <div className={`${styles.cardContainer} ${styles[variant]}`}>
+    <div
+      className={`${styles.cardContainer} ${styles[variant]}`}
+      onClick={() => navigate(`/details/movie/${item.id}`)}
+    >
       <img
         className={styles.cardImage}
         src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
