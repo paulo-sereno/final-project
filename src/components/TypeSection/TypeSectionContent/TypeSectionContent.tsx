@@ -10,6 +10,7 @@ interface ISectionContent {
   title: string;
   path?: string;
   variant: "small" | "big";
+  wrap?: boolean;
 }
 
 function TypeSectionContent({
@@ -18,6 +19,7 @@ function TypeSectionContent({
   title,
   path,
   variant,
+  wrap,
 }: ISectionContent) {
   const { results } = useFetchMedia<MediaItem>({
     type: type,
@@ -29,7 +31,9 @@ function TypeSectionContent({
       <div className={styles.sectionTitleContainer}>
         <TypeSectionHeader title={title} path={path} variant={variant} />
       </div>
-      <div className={styles.sectionCardsContainer}>
+      <div
+        className={`${styles.sectionCardsContainer} ${wrap ? styles.wrap : ""}`}
+      >
         {results.map((item) => (
           <TypeSectionCard key={item.id} item={item} variant={variant} />
         ))}

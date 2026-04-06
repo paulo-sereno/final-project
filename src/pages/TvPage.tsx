@@ -20,6 +20,7 @@ function TvPage() {
           category={"popular"}
           title={"TV Series"}
           variant={"big"}
+          wrap={true}
         />
       </main>
     </>

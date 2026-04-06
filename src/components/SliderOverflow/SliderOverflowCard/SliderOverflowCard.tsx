@@ -5,18 +5,57 @@ import RatingIcon from "../../../icons/RatingIcon";
 import PlayIcon from "../../../icons/PlayIcon";
 import useFetchGenres from "../../../hooks/useFetchGenres";
 import { useNavigate } from "react-router-dom";
+import useFetchDetails from "../../../hooks/useFetchDetails";
 
 interface ISliderOverflowCard {
   item: MediaItem;
 }
 
 function SliderOverflowCard({ item }: ISliderOverflowCard) {
-  const title = isMovie(item) ? item.title : item.name;
-  const date = isMovie(item) ? item.release_date : item.first_air_date;
+  const mediaType = isMovie(item) ? "movie" : "tv";
 
+  const { details } = useFetchDetails({ type: mediaType, id: item.id });
   const { genres } = useFetchGenres(isMovie(item) ? "movie" : "tv");
 
   const navigate = useNavigate();
+
+  const title = isMovie(item) ? item.title : item.name;
+
+  const rawDate = isMovie(item) ? item.release_date : item.first_air_date;
+
+  const formatDate = (dateString: string) => {
+    if (!dateString) return "";
+
+    // Adicionamos 'T12:00:00' para evitar que o fuso horário mude o dia
+    const dateObj = new Date(dateString + "T12:00:00");
+
+    const day = dateObj.getDate();
+    const year = dateObj.getFullYear();
+    const month = dateObj.toLocaleString("en-GB", { month: "long" });
+
+    return `${day}, ${month}, ${year}`;
+  };
+
+  const formattedDate = formatDate(rawDate);
+
+  const languageNames = new Intl.DisplayNames(["en"], { type: "language" });
+  const fullLanguage =
+    languageNames.of(item.original_language) || item.original_language;
+
+  const formatRuntime = () => {
+    if (!details) return "Loading...";
+
+    const time = isMovie(item)
+      ? details.runtime
+      : details.episode_run_time?.[0];
+
+    if (!time) return "N/A";
+
+    const hours = Math.floor(time / 60);
+    const minutes = time % 60;
+
+    return hours > 0 ? `${hours}h ${minutes}min` : `${minutes}min`;
+  };
 
   return (
     <div>
@@ -37,7 +76,7 @@ function SliderOverflowCard({ item }: ISliderOverflowCard) {
                   .map((id) => genres.find((item) => item.id === id)?.name)
                   .join(", ")}
               </span>
-              <span className={styles.contentDetails}>{date}</span>
+              <span className={styles.contentDetails}>{formattedDate}</span>
             </div>
             <div className={styles.upperRight}>
               <RatingIcon type="full" />
@@ -46,7 +85,9 @@ function SliderOverflowCard({ item }: ISliderOverflowCard) {
           </div>
           <div className={styles.bottom}>
             <div className={styles.bottomLeft}>
-              <span>1h 30min, {item.original_language}</span>
+              <span>
+                {formatRuntime()}, {fullLanguage}
+              </span>
             </div>
             <div className={styles.bottomRight}>
               <PlayIcon />

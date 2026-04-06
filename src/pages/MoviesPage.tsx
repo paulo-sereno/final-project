@@ -20,6 +20,7 @@ function MoviesPage() {
           category={"popular"}
           title={"Movies"}
           variant={"big"}
+          wrap={true}
         />
       </main>
     </>

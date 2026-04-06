@@ -34,5 +34,5 @@ export interface ICast {
 
 export interface IUseFetchDetails {
   type: "movie" | "tv";
-  id: string;
+  id: string | number;
 }
