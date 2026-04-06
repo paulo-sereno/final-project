@@ -1,4 +1,5 @@
 import RatingIcon from "../../icons/RatingIcon";
+import styles from "./starRating.module.css";
 
 function StarRating({ voteAverage }: { voteAverage: number }) {
   const rating = voteAverage / 2;
@@ -8,7 +9,7 @@ function StarRating({ voteAverage }: { voteAverage: number }) {
   const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
 
   return (
-    <div className="stars">
+    <div className={styles.stars}>
       {Array(fullStars)
         .fill(null)
         .map((_, i) => (
