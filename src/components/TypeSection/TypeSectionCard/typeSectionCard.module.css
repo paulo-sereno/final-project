@@ -12,14 +12,45 @@
 
 .small {
   width: 10%;
+  min-width: 120px;
 }
 
 .big {
   width: 20%;
+  min-width: 160px;
 }
 
 .cardImage {
   width: 100%;
+  min-height: 180px;
   border-radius: 8px;
   object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .small {
+    width: 120px;
+  }
+
+  .big {
+    width: 160px;
+  }
+
+  .cardImage {
+    height: 180px;
+  }
+}
+
+@media (max-width: 430px) {
+  .small {
+    width: 100px;
+  }
+
+  .big {
+    width: 130px;
+  }
+
+  .cardImage {
+    height: 150px;
+  }
 }

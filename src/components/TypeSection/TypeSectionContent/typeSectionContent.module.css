@@ -8,5 +8,8 @@
 .sectionCardsContainer {
   display: flex;
   overflow: hidden;
+}
+
+.wrap {
   flex-wrap: wrap;
 }
