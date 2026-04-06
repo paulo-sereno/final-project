@@ -35,3 +35,19 @@
   width: 100%;
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  .chip {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 430px) {
+  .chip {
+    font-size: 12px;
+    width: auto;
+    height: 28px;
+    padding: 4px 8px;
+  }
+}

@@ -11,3 +11,23 @@
   gap: 8px;
   flex-wrap: wrap;
 }
+
+@media (max-width: 768px) {
+  .chipsBar {
+    padding: 12px;
+  }
+
+  .chipsContainer {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 430px) {
+  .chipsBar {
+    padding: 8px;
+  }
+
+  .chipsContainer {
+    gap: 4px;
+  }
+}
