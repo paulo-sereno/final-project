@@ -41,6 +41,7 @@
   width: 108px;
   height: 108px;
   object-fit: cover;
+  border-radius: 6px;
 }
 
 .actorName {
