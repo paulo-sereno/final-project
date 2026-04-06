@@ -16,6 +16,20 @@ function TrailerSection({ details, trailer }: ITrailerSection) {
   const runtime = details?.runtime ?? details?.episode_run_time?.[0];
   const navigate = useNavigate();
 
+  const handleShare = async () => {
+    try {
+      const currentUrl = window.location.href;
+      await navigator.clipboard.writeText(currentUrl);
+
+      alert("Link copiado para a área de transferência!");
+    } catch (error) {
+      console.log("Erro ao copiar o link", error);
+      alert(
+        "Não foi possível copiar o link. Pedimos desculpa pelo transtorno.",
+      );
+    }
+  };
+
   return (
     <section className={styles.trailerSection}>
       <img
@@ -24,19 +38,24 @@ function TrailerSection({ details, trailer }: ITrailerSection) {
       />
 
       <div className={styles.overlay} />
-      
+
       <div className={styles.topBar}>
         <button className={styles.backBtn} onClick={() => navigate(-1)}>
           <BackIcon />
         </button>
-        <button className={styles.shareBtn}>
+        <button className={styles.shareBtn} onClick={handleShare}>
           <ShareIcon />
         </button>
       </div>
 
       {trailer && (
-        <a className={styles.playBtn} href={`https://www.youtube.com/watch?v=${trailer.key}`} target="_blank" rel="noreferrer">
-        <PlayIcon />
+        <a
+          className={styles.playBtn}
+          href={`https://www.youtube.com/watch?v=${trailer.key}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <PlayIcon />
         </a>
       )}
 
