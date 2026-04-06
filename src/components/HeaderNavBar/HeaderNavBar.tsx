@@ -1,11 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import MenuIcon from "../../icons/MenuIcon";
 import styles from "./headernavbar.module.css";
 
 function HeaderNavBar() {
+  const navigate = useNavigate();
+
   return (
     <header className={styles.appHeader}>
       <div className={styles.welcomeUser}>
-        <div>
+        <div onClick={() => navigate(`/`)}>
           <img
             className={styles.userAvatar}
             src="/src/assets/AymenAvatar.png"
