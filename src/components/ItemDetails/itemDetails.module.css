@@ -18,14 +18,20 @@
 
 .showMore {
   display: none;
+  margin-top: 8px;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 768px) {
   .collapsed {
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  .overview {
+    font-size: 12px;
   }
 
   .showMore {
