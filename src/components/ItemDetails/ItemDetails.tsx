@@ -14,14 +14,19 @@ function ItemDetails({ details }: IItemDetails) {
   return (
     <div className={styles.itemDetails}>
       <div className={styles.title}>{title}</div>
-      <div className={`${styles.overview} ${!expanded ? styles.collapsed : ""}`}>
+      <div
+        className={`${styles.overview} ${!expanded ? styles.collapsed : ""}`}
+      >
         {details?.overview}
       </div>
-      <button className={styles.showMore} onClick={() => setExpanded(!expanded)}>
+      <button
+        className={styles.showMore}
+        onClick={() => setExpanded(!expanded)}
+      >
         {expanded ? "Show Less" : "Show More"}
       </button>
     </div>
   );
 }
 
-export default ItemDetails
+export default ItemDetails;
