@@ -1,0 +1,33 @@
+.itemDetails {
+  padding: 16px;
+  text-align: left;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 25px;
+  margin: 0 0 8px 0;
+}
+
+.overview {
+  margin: 0;
+font-weight: 400;
+font-size: 18px;
+}
+
+.showMore {
+    display: none;
+}
+
+@media (max-width: 430px) {
+    .collapsed {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .showMore {
+        display: block;;
+    }
+}
